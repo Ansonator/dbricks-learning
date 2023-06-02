@@ -135,6 +135,14 @@ display(example_df)
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC # Header
+# MAGIC * b1
+# MAGIC * b2
+# MAGIC ![stff](https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg)
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC
 # MAGIC ## Run a SQL cell
 # MAGIC
