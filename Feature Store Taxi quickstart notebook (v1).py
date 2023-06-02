@@ -266,12 +266,37 @@ spark.sql(sqlCommand).display()
 
 # COMMAND ----------
 
+# MAGIC %python 
+# MAGIC spark.conf.set('whatever.dropoff_feature_table_name',f"{dropoff_feature_table_name}")
+# MAGIC spark.conf.get('whatever.dropoff_feature_table_name')
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
 # MAGIC %sql
-# MAGIC select * from feature_store_taxi_example.trip_dropoff_features_233;
-# MAGIC -- SELECT SUM(count_trips_window_30m_dropoff_zip) AS num_rides, dropoff_is_weekend
-# MAGIC --   FROM   ${dropoff_feature_table_name}
-# MAGIC --   WHERE  dropoff_is_weekend IS NOT NULL
-# MAGIC --   GROUP  BY dropoff_is_weekend
+# MAGIC CREATE OR REPLACE TEMP FUNCTION myTable()
+# MAGIC RETURNS FLOAT
+# MAGIC LANGUAGE SQL
+# MAGIC RETURN 
+# MAGIC SELECT '${whatever.dropoff_feature_table_name}' as x;
+# MAGIC
+# MAGIC select myTable();
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from ${whatever.dropoff_feature_table_name}
 
 # COMMAND ----------
 
