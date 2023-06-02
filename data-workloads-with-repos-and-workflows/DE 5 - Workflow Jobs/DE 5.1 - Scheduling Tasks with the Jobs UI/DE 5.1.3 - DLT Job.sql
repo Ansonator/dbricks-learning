@@ -3,6 +3,12 @@
 
 -- COMMAND ----------
 
+-- MAGIC %python
+-- MAGIC # dbfs:/user/hive/warehouse/feature_store_taxi_example.db/trip_dropoff_features_233
+-- MAGIC cloud_files("${source}/retail-org/sales_orders/", "json", map("cloudFiles.inferColumnTypes", "true"))
+
+-- COMMAND ----------
+
 CREATE OR REFRESH STREAMING LIVE TABLE sales_orders_raw
 COMMENT "The raw sales orders, ingested from retail-org/sales_orders."
 AS
